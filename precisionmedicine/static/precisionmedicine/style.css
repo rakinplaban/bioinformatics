@@ -1,4 +1,21 @@
 .coloniva {
   background-color: #f46f09;
 }
+
+body {
+  background-color: black;
+}
+
+.label label {
+  color: white;
+}
+
+.label input {
+  size: 40px;
+}
+
+.label h1 {
+  background-color: red;
+  color: azure;
+}
 /*# sourceMappingURL=style.css.map */
