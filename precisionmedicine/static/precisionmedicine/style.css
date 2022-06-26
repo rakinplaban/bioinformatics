@@ -3,7 +3,18 @@
 }
 
 body {
-  background-color: black;
+  background-color: #423131;
+  color: aliceblue;
+}
+
+.label {
+  margin-top: 15rem;
+  border-color: red;
+  background-color: #1c0303;
+}
+
+.label .beautify_form {
+  margin: 3% 3% 3% 3%;
 }
 
 .label label {
@@ -17,5 +28,34 @@ body {
 .label h1 {
   background-color: red;
   color: azure;
+  text-align: center;
+  font-weight: bolder;
+}
+
+@media (min-width: 441px) {
+  .label {
+    margin: 25% 2% 1% 59%;
+  }
+}
+
+@media (min-width: 1228px) {
+  .label {
+    margin: 17% 2% 1% 59%;
+  }
+}
+
+.sbtn {
+  background-color: red;
+  color: azure;
+  font-weight: bold;
+}
+
+.acc {
+  text-decoration: none;
+  color: red;
+}
+
+.acc:hover {
+  color: yellow;
 }
 /*# sourceMappingURL=style.css.map */

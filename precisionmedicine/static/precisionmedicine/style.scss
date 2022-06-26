@@ -1,11 +1,25 @@
+$red_music : red;
+$chocolate_gray : rgb(66, 49, 49);
+$deep_chocolate_gray : #1c0303;
 .coloniva{
     background-color:#f46f09;
 }
 body{
-    background-color: black;
+    background-color: $chocolate_gray;
+    color: aliceblue;
 }
 
+$max_small_screen: 441px;
+$mid_screen : 1228px;
+
 .label{
+    margin-top: 15rem;
+    border-color: $red_music;
+    background-color: $deep_chocolate_gray;
+    .beautify_form{
+        margin: 3% 3% 3% 3%;
+    }
+
     label{
         color: white;
     }
@@ -13,7 +27,35 @@ body{
         size:40px;
     }
     h1{
-        background-color: red;
+        background-color: $red_music;
         color:azure;
+        text-align: center;
+        font-weight: bolder;
+    }
+}
+
+@media (min-width : $max_small_screen){
+    .label{
+        margin: 25% 2% 1% 59%;
+    }
+}
+
+@media (min-width : $mid_screen){
+    .label{
+        margin: 17% 2% 1% 59%;
+    }
+}
+
+.sbtn{
+    background-color: $red_music;
+    color: azure;
+    font-weight: bold;
+}
+
+.acc{
+    text-decoration: none;
+    color: $red_music;
+    &:hover{
+        color: yellow;
     }
 }
