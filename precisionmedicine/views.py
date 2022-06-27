@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
+from .models import User
+from django.db import IntegrityError
 
 # Create your views here.
 
@@ -42,6 +44,28 @@ def register(request):
         password = request.POST["password"]
         confirm_password = request.POST["confirm_password"]
 
-        
+        if(password != confirm_password):
+            return render(request,"precisionmedicine/register.html",{
+                'message' : "Sorry! Password didn't matche."
+            })
 
-    return render(request,"precisionmedicine/register.html")
+        try:
+            user = User.objects.create_user(username, email, password)
+            user.save()
+        except IntegrityError:
+            return render(request, "network/register.html", {
+                "message": "Username already taken."
+            })
+
+        login(request,user)
+        return HttpResponseRedirect(reverse("profile",kwargs={id: request.user.id}))
+
+    else:
+        return render(request,"precisionmedicine/register.html")
+
+
+def profile(request,id):
+    id = request.user.id
+    return render(request,"precisionmedicine/profile.html",{
+            'id' : id
+        })
