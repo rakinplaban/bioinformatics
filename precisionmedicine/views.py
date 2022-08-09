@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from .models import User
 from django.db import IntegrityError
+from django.template.loader import TemplateDoesNotExist
 
 # Create your views here.
 
@@ -53,6 +54,10 @@ def register(request):
             user = User.objects.create_user(username, email, password)
             user.save()
         except IntegrityError:
+            return render(request, "network/register.html", {
+                "message": "Username already taken."
+            })
+        except TemplateDoesNotExist:
             return render(request, "network/register.html", {
                 "message": "Username already taken."
             })

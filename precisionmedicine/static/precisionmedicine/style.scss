@@ -1,6 +1,13 @@
+//colors
 $red_music : red;
+$red_susan : rgba(179, 6, 6, 0.755);
 $chocolate_gray : rgb(66, 49, 49);
 $deep_chocolate_gray : #1c0303;
+//sizes
+$max_small_screen: 441px;
+$small_screen : 863px;
+$large_screen : 1228px;
+
 .coloniva{
     background-color:#f46f09;
 }
@@ -9,8 +16,7 @@ body{
     color: aliceblue;
 }
 
-$max_small_screen: 441px;
-$mid_screen : 1228px;
+
 
 .label{
     margin-top: 15rem;
@@ -40,7 +46,7 @@ $mid_screen : 1228px;
     }
 }
 
-@media (min-width : $mid_screen){
+@media (min-width : $large_screen){
     .label{
         margin: 17% 2% 1% 59%;
     }
@@ -50,6 +56,9 @@ $mid_screen : 1228px;
     background-color: $red_music;
     color: azure;
     font-weight: bold;
+    &:hover{
+        background-color: $red_susan;
+    }
 }
 
 .acc{
@@ -58,4 +67,56 @@ $mid_screen : 1228px;
     &:hover{
         color: yellow;
     }
+}
+
+.logoutbtn{
+    margin: 2% 0% 2% 85%;
+    display: inline;
+}
+
+@media (min-width: $max_small_screen){
+    .logoutbtn{
+        margin: 2% 0% 2% 70%;
+    }
+}
+
+@media (min-width: $small_screen){
+    .logoutbtn{
+        margin: 2% 0% 2% 70%;
+    }
+}
+
+@media (min-width: 864px){
+    .logoutbtn{
+        margin: 2% 0% 2% 80%;
+    }
+}
+
+@media (min-width: $large_screen){
+    .logoutbtn{
+        margin: 2% 0% 2% 88%;
+    }
+}
+
+@media (min-width:225px) {
+    .logoutbtn{
+        margin: 2% 0% 2% 55%;
+    }
+}
+
+.logo{
+    position: relative;
+    margin: 2% 0% 2% 0%;
+    display: inline;
+    img{
+        width: 10%;
+    }
+}
+
+@media (min-width: $large_screen) {
+   .logo{
+        img{
+            width: 5%;
+        }
+   }
 }

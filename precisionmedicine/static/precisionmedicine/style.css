@@ -50,6 +50,10 @@ body {
   font-weight: bold;
 }
 
+.sbtn:hover {
+  background-color: rgba(179, 6, 6, 0.755);
+}
+
 .acc {
   text-decoration: none;
   color: red;
@@ -57,5 +61,56 @@ body {
 
 .acc:hover {
   color: yellow;
+}
+
+.logoutbtn {
+  margin: 2% 0% 2% 85%;
+  display: inline;
+}
+
+@media (min-width: 441px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 70%;
+  }
+}
+
+@media (min-width: 863px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 70%;
+  }
+}
+
+@media (min-width: 864px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 80%;
+  }
+}
+
+@media (min-width: 1228px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 88%;
+  }
+}
+
+@media (min-width: 225px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 55%;
+  }
+}
+
+.logo {
+  position: relative;
+  margin: 2% 0% 2% 0%;
+  display: inline;
+}
+
+.logo img {
+  width: 10%;
+}
+
+@media (min-width: 1228px) {
+  .logo img {
+    width: 5%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
