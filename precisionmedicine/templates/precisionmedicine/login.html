@@ -1,0 +1,28 @@
+{% extends "precisionmedicine/layout.html" %}
+
+{% block body %}
+
+    <div class="label">
+        <h1>Login</h1>
+        <form class="form-gorup beautify_form" action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <div>
+                <label>User name</label>
+                <div>
+                    <input type="text" class="form-control" name="username"  required>
+                </div>   
+            </div>
+            <div>
+                <label>Password</label>
+                <div>
+                    <input type="password" class="form-control" name="password"  required>
+                </div>
+            </div>
+            <div style="margin-top: 15px;"></div>
+            <input class="btn sbtn" type="Submit" value="Submit">
+        </form>
+        <div>Don't have an account? <a href="{% url 'register' %}" class="acc">Create one.</a></div>
+    </div>  
+    
+
+{% endblock %}

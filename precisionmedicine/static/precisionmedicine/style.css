@@ -1,0 +1,116 @@
+.coloniva {
+  background-color: #f46f09;
+}
+
+body {
+  background-color: #423131;
+  color: aliceblue;
+}
+
+.label {
+  margin-top: 15rem;
+  border-color: red;
+  background-color: #1c0303;
+}
+
+.label .beautify_form {
+  margin: 3% 3% 3% 3%;
+}
+
+.label label {
+  color: white;
+}
+
+.label input {
+  size: 40px;
+}
+
+.label h1 {
+  background-color: red;
+  color: azure;
+  text-align: center;
+  font-weight: bolder;
+}
+
+@media (min-width: 441px) {
+  .label {
+    margin: 25% 2% 1% 59%;
+  }
+}
+
+@media (min-width: 1228px) {
+  .label {
+    margin: 17% 2% 1% 59%;
+  }
+}
+
+.sbtn {
+  background-color: red;
+  color: azure;
+  font-weight: bold;
+}
+
+.sbtn:hover {
+  background-color: rgba(179, 6, 6, 0.755);
+}
+
+.acc {
+  text-decoration: none;
+  color: red;
+}
+
+.acc:hover {
+  color: yellow;
+}
+
+.logoutbtn {
+  margin: 2% 0% 2% 85%;
+  display: inline;
+}
+
+@media (min-width: 441px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 70%;
+  }
+}
+
+@media (min-width: 863px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 70%;
+  }
+}
+
+@media (min-width: 864px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 80%;
+  }
+}
+
+@media (min-width: 1228px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 88%;
+  }
+}
+
+@media (min-width: 225px) {
+  .logoutbtn {
+    margin: 2% 0% 2% 55%;
+  }
+}
+
+.logo {
+  position: relative;
+  margin: 2% 0% 2% 0%;
+  display: inline;
+}
+
+.logo img {
+  width: 10%;
+}
+
+@media (min-width: 1228px) {
+  .logo img {
+    width: 5%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
