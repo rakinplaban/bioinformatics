@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #423131;
+  background-color: rgb(66, 49, 49);
   color: aliceblue;
 }
 
@@ -12,19 +12,15 @@ body {
   border-color: red;
   background-color: #1c0303;
 }
-
 .label .beautify_form {
   margin: 3% 3% 3% 3%;
 }
-
 .label label {
   color: white;
 }
-
 .label input {
   size: 40px;
 }
-
 .label h1 {
   background-color: red;
   color: azure;
@@ -37,19 +33,16 @@ body {
     margin: 25% 2% 1% 59%;
   }
 }
-
 @media (min-width: 1228px) {
   .label {
     margin: 17% 2% 1% 59%;
   }
 }
-
 .sbtn {
   background-color: red;
   color: azure;
   font-weight: bold;
 }
-
 .sbtn:hover {
   background-color: rgba(179, 6, 6, 0.755);
 }
@@ -58,7 +51,6 @@ body {
   text-decoration: none;
   color: red;
 }
-
 .acc:hover {
   color: yellow;
 }
@@ -73,37 +65,31 @@ body {
     margin: 2% 0% 2% 70%;
   }
 }
-
 @media (min-width: 863px) {
   .logoutbtn {
     margin: 2% 0% 2% 70%;
   }
 }
-
 @media (min-width: 864px) {
   .logoutbtn {
     margin: 2% 0% 2% 80%;
   }
 }
-
 @media (min-width: 1228px) {
   .logoutbtn {
     margin: 2% 0% 2% 88%;
   }
 }
-
 @media (min-width: 225px) {
   .logoutbtn {
     margin: 2% 0% 2% 55%;
   }
 }
-
 .logo {
   position: relative;
   margin: 2% 0% 2% 0%;
   display: inline;
 }
-
 .logo img {
   width: 10%;
 }
@@ -112,5 +98,4 @@ body {
   .logo img {
     width: 5%;
   }
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
