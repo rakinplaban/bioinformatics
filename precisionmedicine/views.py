@@ -46,15 +46,13 @@ def register(request):
     if request.method == "POST":
         full_name = request.POST["full_name"]
         username = request.POST["username"]
-        phone = request.POST["phone"]
         email = request.POST["email"]
-        address = request.POST["address"]
 
         # Ensure password matches confirmation
         password = request.POST["password"]
-        confirmation = request.POST["confirmation"]
+        confirmation = request.POST["confirm_password"]
         if password != confirmation:
-            return render(request, "stock_app/register.html", {
+            return render(request, "precisionmedicine/register.html", {
                 "message": "Passwords must match."
             })
 
@@ -62,20 +60,18 @@ def register(request):
         try:
             user = User.objects.create_user(username, email, password)
             user.full_name = full_name
-            user.phone = phone
-            user.address = address
             user.save()
 
             # group = Group.objects.get(name="publisher")
             # user.groups.add(group)
         except IntegrityError:
-            return render(request, "stock_app/register.html", {
+            return render(request, "precisionmedicine/register.html", {
                 "message": "Username already taken."
             })
         login(request, user)
         return HttpResponseRedirect(reverse("index"))
     else:
-        return render(request, "stock_app/register.html")
+        return render(request, "precisionmedicine/register.html")
 
 
 def profile(request,id):

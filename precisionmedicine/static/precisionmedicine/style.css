@@ -8,12 +8,12 @@ body {
 }
 
 .label {
-  margin-top: 15rem;
+  margin-top: 5.5rem;
   border-color: red;
   background-color: #1c0303;
 }
 .label .beautify_form {
-  margin: 3% 3% 3% 3%;
+  margin: 0% 3% 3% 3%;
 }
 .label label {
   color: white;
@@ -30,12 +30,12 @@ body {
 
 @media (min-width: 441px) {
   .label {
-    margin: 25% 2% 1% 59%;
+    margin: 20% 2% 1% 59%;
   }
 }
 @media (min-width: 1228px) {
   .label {
-    margin: 17% 2% 1% 59%;
+    margin: 10% 2% 1% 59%;
   }
 }
 .sbtn {

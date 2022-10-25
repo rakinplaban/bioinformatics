@@ -19,11 +19,11 @@ body{
 
 
 .label{
-    margin-top: 15rem;
+    margin-top: 5.5rem;
     border-color: $red_music;
     background-color: $deep_chocolate_gray;
     .beautify_form{
-        margin: 3% 3% 3% 3%;
+        margin: 0% 3% 3% 3%;
     }
 
     label{
@@ -42,13 +42,13 @@ body{
 
 @media (min-width : $max_small_screen){
     .label{
-        margin: 25% 2% 1% 59%;
+        margin: 20% 2% 1% 59%;
     }
 }
 
 @media (min-width : $large_screen){
     .label{
-        margin: 17% 2% 1% 59%;
+        margin: 10% 2% 1% 59%;
     }
 }
 

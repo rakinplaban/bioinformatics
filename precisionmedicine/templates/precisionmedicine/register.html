@@ -4,9 +4,13 @@
 
     <div class="label">
         <h1>Register</h1>
-        <form class="form-gorup beautify_form" action="{% url 'register' %}" method="POST">
+        <form class="form-gorup beautify_form" action="" method="POST">
             {% csrf_token %}
             <div>
+                <label>Full name</label>
+                <div>
+                    <input type="text" class="form-control" name="full_name"  required>
+                </div>      
                 <label>User name</label>
                 <div>
                     <input type="text" class="form-control" name="username"  required>
