@@ -17,6 +17,7 @@
         <img src="{% static 'static_images/bitmap1.png' %}" alt="Image currently not available." >
       </div> 
       <div class="logoutbtn">
+        {{user.full_name}}
         <a href="{% url 'logout' %}" class="btn sbtn">Logout</a>
       </div>
     </div>
