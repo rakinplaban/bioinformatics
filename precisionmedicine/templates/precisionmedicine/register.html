@@ -4,6 +4,9 @@
 
     <div class="label">
         <h1>Register</h1>
+        {% if message %}
+            <div>{{message}}</div>
+        {% endif %}
         <form class="form-gorup beautify_form" action="" method="POST">
             {% csrf_token %}
             <div>
