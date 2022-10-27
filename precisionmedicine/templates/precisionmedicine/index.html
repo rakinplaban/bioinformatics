@@ -3,7 +3,49 @@
 {% block title %}Home{% endblock %}
 
 {% block body %} 
-
+<div class="bg-model">
+    <div class="model-content">
+        <a href="{% url 'index' %}" style="color:black;">
+            <div class="close">+</div>
+        </a>
+        <h1>Add Patient</h1>
+        {% if user.is_authenticated %}
+            <div class="patient-form">
+                <form action="" method="POST" enctype="multipart/form-data" class="form-group">
+                    {% csrf_token %}
+                    {{patient_form}}
+                    <div style="margin-bottom: 2px;"></div>
+                    <input type="Submit" class="btn sbtn">
+                </form>
+            </div>
+        {% else %}
+            <div class="sorry">Sorry! You have to <a href="{% url 'login' %}">login</a>. 😔</div>
+        {% endif %}
+        
+    </div>
     
+</div>
 
+    <table class="table text-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Protine Sequence</th>
+            <th scope="col">Delete</th>
+        </tr>
+        {% for patient in patients %} 
+
+        <tr>
+            <th scope="row">{{patient.id}}</th>
+            <td>{{patient.name}}</td>
+            <td>{{patient.age}}</td>
+            <td>{{patient.gender}}</td>
+            <td>{{patient.protine}}</td>
+            <td><a href="{% url 'delete_patient' patient.id %}" class="text-light"><i class="fa fa-trash-o"></i></a></td>
+        </tr>
+
+        {% endfor %}
+    </table>
 {% endblock %}

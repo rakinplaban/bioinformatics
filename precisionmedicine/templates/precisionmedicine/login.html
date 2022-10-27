@@ -4,7 +4,10 @@
 
     <div class="label">
         <h1>Login</h1>
-        <form class="form-gorup beautify_form" action="{% url 'login' %}" method="POST">
+        {% if message %}
+            <div>{{message}}</div>
+        {% endif %}
+        <form class="form-gorup beautify_form" action="" method="POST">
             {% csrf_token %}
             <div>
                 <label>User name</label>
