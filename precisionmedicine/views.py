@@ -6,12 +6,16 @@ from .models import User
 from django.db import IntegrityError
 from django.template.loader import TemplateDoesNotExist
 from django.views.decorators.csrf import csrf_exempt,csrf_protect
+from .forms import Patient_form
 
 # Create your views here.
 
 def index(request):
     if request.user.is_authenticated:
-        return render(request,"precisionmedicine/index.html")
+        patient_form = Patient_form()
+        return render(request,"precisionmedicine/index.html",{
+            "patient_form" : patient_form,
+        })
     else:
         return HttpResponseRedirect(reverse("login"))
 

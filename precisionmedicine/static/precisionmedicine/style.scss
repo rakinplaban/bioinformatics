@@ -144,8 +144,16 @@ body{
     h1{
         text-align: center;
         margin-top: 18px;
+        color: $red_music;
     }
     position: relative;
+}
+
+.patient-form{
+    margin: 1rem 1rem 1rem 1rem;
+    label{
+        color: $red_susan;
+    }
 }
 
 .close{

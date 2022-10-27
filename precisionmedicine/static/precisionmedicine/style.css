@@ -123,6 +123,14 @@ body {
 .model-content h1 {
   text-align: center;
   margin-top: 18px;
+  color: red;
+}
+
+.patient-form {
+  margin: 1rem 1rem 1rem 1rem;
+}
+.patient-form label {
+  color: rgba(179, 6, 6, 0.755);
 }
 
 .close {

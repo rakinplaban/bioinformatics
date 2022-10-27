@@ -5,17 +5,17 @@ from .models import Patient
 class Patient_form(forms.ModelForm):
     class Meta:
         model = Patient
-        fields = ['title','location', 'description','url' ]
+        fields = ['name','age','gender','protine' ]
 
         labels = {
-            'title' : 'Title*',
-            'location' : 'Location',
-            'description' : 'Description*',
-            'url' : '',
+            'name' : 'Name*',
+            'age' : 'Age',
+            'gender' : 'Gender*',
+            'protine' : 'Protine Structure',
         }
 
         widgets = {
-            'title' : forms.TextInput(attrs={
+            'name' : forms.TextInput(attrs={
                 'class' : 'form-control',
                 'placeholder' : 'Title of image',
                 'rows' : 1,
@@ -23,30 +23,26 @@ class Patient_form(forms.ModelForm):
                 'type' : 'text'
             }),
 
-            'url' : forms.ClearableFileInput(attrs={
-                'class' : 'dropify',
+            'age' : forms.NumberInput(attrs={
+                'class' : 'form-control',
                 'rows' : 1,
                 'cols' : 100,
-                'type' : 'file',
-                'multiple' : True,
-                'data-height' : 100,
-                # 'id' : 'upload_custom',
+                'type' : 'number',
             }),
 
-            'location' : forms.TextInput(attrs={
+            'gender' : forms.Select(attrs={
                 'class' : 'form-control',
-                'placeholder' : 'location',
                 'rows' : 1,
                 'cols' : 100,
-                'type' : 'text',
+                'type' : 'options',
             }),
 
-            'description' : forms.Textarea(attrs={
+            'protine' : forms.Textarea(attrs={
                 'class' : 'form-control',
-                'placeholder' : 'Tell something about..',
+                'placeholder' : 'Protine structure',
                 'rows' : 3,
                 'cols' : 100,
-                'type' : 'textarea'
+                'type' : 'text'
             }),
         }
 
