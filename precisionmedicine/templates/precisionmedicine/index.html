@@ -3,7 +3,26 @@
 {% block title %}Home{% endblock %}
 
 {% block body %} 
-
+<div class="bg-model">
+    <div class="model-content">
+        <a href="{% url 'index' %}" style="color:black;">
+            <div class="close">+</div>
+        </a>
+        <h1>Upload Image</h1>
+        {% if user.is_authenticated %}
+            <div class="img-form">
+                <form action="{% url 'index' %}" method="POST" enctype="multipart/form-data" class="form-group">
+                    {% csrf_token %}
+                    {{i_form}}
+                    <div style="margin-bottom: 2px;"></div>
+                    <input type="Submit" class="btn btn-primary">
+                </form>
+            </div>
+        {% else %}
+            <div class="sorry">Sorry! You have to <a href="{% url 'login' %}">login</a>. 😔</div>
+        {% endif %}
+        
+    </div>
     
 
 {% endblock %}
