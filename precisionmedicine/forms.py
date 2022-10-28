@@ -37,7 +37,7 @@ class Patient_form(forms.ModelForm):
                 'type' : 'options',
             }),
 
-            'protine' : forms.Textarea(attrs={
+            'protine' : forms.TextInput(attrs={
                 'class' : 'form-control',
                 'placeholder' : 'Protine structure',
                 'rows' : 3,
