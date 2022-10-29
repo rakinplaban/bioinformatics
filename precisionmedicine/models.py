@@ -23,6 +23,9 @@ class Patient(models.Model):
     protine = models.CharField(max_length=8)
     doctor = models.ForeignKey(User,default=2,on_delete=CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 class Disaese(models.Model):
     name = models.CharField(max_length=45)
