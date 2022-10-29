@@ -55,7 +55,7 @@ class Disease_form(forms.ModelForm):
         widgets = {
             'name' : forms.TextInput(attrs={
                 'class' : 'form-control',
-                'placeholder' : 'Title of image',
+                'placeholder' : 'Type of disease',
                 'rows' : 1,
                 'cols' : 100,
                 'type' : 'text'
