@@ -23,5 +23,11 @@ class Patient(models.Model):
     protine = models.CharField(max_length=8)
     doctor = models.ForeignKey(User,default=2,on_delete=CASCADE)
 
+
+class Disaese(models.Model):
+    name = models.CharField(max_length=45)
+    root_protine = models.CharField(max_length=8)
+    patient = models.ForeignKey(Patient,on_delete=CASCADE)
+
 # class Medicine(models.Model):
 #     name= models.CharField()

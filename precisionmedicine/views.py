@@ -6,7 +6,7 @@ from django.db import IntegrityError
 from django.template.loader import TemplateDoesNotExist
 from django.views.decorators.csrf import csrf_exempt,csrf_protect
 # methods I made.
-from .forms import Patient_form
+from .forms import Patient_form,Disease_form
 from .models import Patient,User
 
 # Create your views here.
@@ -14,6 +14,7 @@ from .models import Patient,User
 def index(request):
     if request.user.is_authenticated:
         patient_form = Patient_form()
+        add_disese = Disease_form()
         patiants = Patient.objects.all().order_by('-id')
         if request.method=="POST":
             patient_form = Patient_form(request.POST)
@@ -26,9 +27,19 @@ def index(request):
 
                 return redirect("index")
 
+            add_disese = Disease_form(request.POST)
+
+            if add_disese.is_valid():
+                instance = add_disese.save(commit=False)
+                instance.save()
+                add_disese = Disease_form()
+
+                return redirect("index")
+
         return render(request,"precisionmedicine/index.html",{
             "patient_form" : patient_form,
             "patients" : patiants,
+            "add_disease" : add_disese,
         })
     else:
         return HttpResponseRedirect(reverse("login"))

@@ -25,6 +25,28 @@
     </div>
     
 </div>
+<div class="bg-model-5">
+    <div class="model-content-5">
+        <a href="{% url 'index' %}" style="color:black;">
+            <div class="close-5">+</div>
+        </a>
+        <h1>Add Disease</h1>
+        {% if user.is_authenticated %}
+            <div class="patient-form">
+                <form action="" method="POST" enctype="multipart/form-data" class="form-group">
+                    {% csrf_token %}
+                    {{add_disease}}
+                    <div style="margin-bottom: 2px;"></div>
+                    <input type="Submit" class="btn sbtn">
+                </form>
+            </div>
+        {% else %}
+            <div class="sorry">Sorry! You have to <a href="{% url 'login' %}">login</a>. 😔</div>
+        {% endif %}
+        
+    </div>
+    
+</div>
 
     <table class="table text-light">
         <tr>
