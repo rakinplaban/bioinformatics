@@ -20,6 +20,7 @@ def index(request):
 
             if patient_form.is_valid():
                 instance = patient_form.save(commit=False)
+                instance.doctor = request.user
                 instance.save()
                 patient_form = Patient_form()
 
@@ -101,3 +102,24 @@ def profile(request,id):
     return render(request,"precisionmedicine/profile.html",{
             'id' : id
         })
+
+'''
+def search(request):
+    if request.method == "GET":
+        search = request.GET['q']
+        
+        try:
+            categories = Categories.objects.get(name__icontains=search)
+            images = categories.images.all().order_by('-id')
+        except ObjectDoesNotExist:
+            return render(request,"stock_app/index.html",{
+            "message" : "No Result Found!",
+            "categories" : Categories.objects.all(),
+        })
+           
+        return render(request,"stock_app/index.html",{
+            "search" : search,
+            "images" : images,
+            "categories" : Categories.objects.all(),
+        })
+'''
