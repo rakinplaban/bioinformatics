@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', function(){
         document.querySelector('.bg-model').style.display = 'none';
     });
     
-   
+    document.querySelector('#adddisease').addEventListener('click', ()=> {
+        document.querySelector('.bg-model-5').style.display = 'flex';
+    });
+
+    document.querySelector('.close-5').addEventListener('click', ()=> {
+        document.querySelector('.bg-model-5').style.display = 'none';
+    });
+    
 
 })
