@@ -96,3 +96,20 @@
         </table>
     </div>
 {% endblock %}
+
+{% block script %} 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            var availableTags = [
+                {% for disease in diseases %}
+                    "{{disease.name}}",
+                {% endfor %}
+            ];
+            $( "#searchbar" ).autocomplete({
+              source: availableTags
+            });
+        });
+    </script>
+    {% endblock %}

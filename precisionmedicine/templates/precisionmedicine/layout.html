@@ -51,8 +51,9 @@
                 <a class="nav-link text-light" aria-current="page" id="adddisease">Add Diseases</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <form class="d-flex" role="search" method="GET">
+              {% csrf_token %}
+              <input class="form-control me-2" id="searchbar" name="q" type="search" placeholder="Search" aria-label="Search" required>
               <button class="btn btn-outline-success btn-light" type="submit">Search</button>
             </form>
           </div>
@@ -64,5 +65,8 @@
     {% block body %}
 
     {% endblock %}
+
+    
+
 </body>
 </html>

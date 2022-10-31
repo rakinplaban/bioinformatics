@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
+from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import TemplateDoesNotExist
 from django.views.decorators.csrf import csrf_exempt,csrf_protect
 # methods I made.
@@ -119,23 +120,22 @@ def profile(request,id):
             'id' : id
         })
 
-'''
+
 def search(request):
     if request.method == "GET":
         search = request.GET['q']
         
         try:
-            categories = Categories.objects.get(name__icontains=search)
-            images = categories.images.all().order_by('-id')
+            diseases = Disaese.objects.get(name__icontains=search)
+            patient = diseases.patient.all().order_by('-id')
         except ObjectDoesNotExist:
-            return render(request,"stock_app/index.html",{
+            return render(request,"precisionmedicine/index.html",{
             "message" : "No Result Found!",
-            "categories" : Categories.objects.all(),
+            "diseases" : Disaese.objects.all(),
         })
            
-        return render(request,"stock_app/index.html",{
+        return render(request,"precisionmedicine/index.html",{
             "search" : search,
-            "images" : images,
-            "categories" : Categories.objects.all(),
+            "patient" : patient,
+            "diseases" : Disaese.objects.all(),
         })
-'''
