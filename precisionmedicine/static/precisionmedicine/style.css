@@ -176,4 +176,12 @@ body {
   transform: rotate(45deg);
   font-size: 20px;
   cursor: pointer;
+}
+
+.patients-table {
+  display: block;
+}
+
+.diseases-table {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

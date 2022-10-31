@@ -17,12 +17,12 @@ document.addEventListener('DOMContentLoaded', function(){
     
     document.querySelector('#patients').addEventListener('click', ()=> {
         document.querySelector('.diseases-table').style.display = 'none';
-        document.querySelector('.patient-table').style.display = 'block';
+        document.querySelector('.patients-table').style.display = 'block';
     });
 
     document.querySelector('#disease').addEventListener('click', ()=> {
         document.querySelector('.diseases-table').style.display = 'block';
-        document.querySelector('.patient-table').style.display = 'none';
+        document.querySelector('.patients-table').style.display = 'none';
     });
 
 })
