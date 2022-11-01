@@ -1,8 +1,9 @@
 {% extends 'precisionmedicine/layout.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block body %} 
+
 <div class="bg-model">
     <div class="model-content">
         <a href="{% url 'index' %}" style="color:black;">
@@ -47,7 +48,7 @@
     </div>
     
 </div>
-    <div>
+    <div class="patients-table">
         <table class="table text-light">
             <tr>
                 <th scope="col">#</th>
@@ -73,4 +74,27 @@
             {% endfor %}
         </table>
     </div>
+    <div class="diseases-table">
+        <table class="table text-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name of Disease</th>
+                <th scope="col">Root Portine</th>
+                <th scope="col">Patient</th>
+                <th scope="col">Delete</th>
+            </tr>
+            {% for disease in diseases %} 
+
+            <tr>
+                <th scope="row">{{disease.id}}</th>
+                <td>{{disease.name}}</td>
+                <td>{{disease.root_protine}}</td>
+                <td>{{disease.patient}}</td>
+                <td><a href="{% url 'delete_disease' disease.id %}" class="text-light"><i class="fa fa-trash-o"></i></a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}
+

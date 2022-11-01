@@ -3,11 +3,12 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
+from django.core.exceptions import ObjectDoesNotExist
 from django.template.loader import TemplateDoesNotExist
 from django.views.decorators.csrf import csrf_exempt,csrf_protect
 # methods I made.
 from .forms import Patient_form,Disease_form
-from .models import Patient,User
+from .models import Patient,User,Disaese
 
 # Create your views here.
 
@@ -16,6 +17,7 @@ def index(request):
         patient_form = Patient_form()
         add_disese = Disease_form()
         patiants = Patient.objects.all().order_by('-id')
+        diseases = Disaese.objects.all().order_by('-id')
         if request.method=="POST":
             patient_form = Patient_form(request.POST)
 
@@ -39,6 +41,7 @@ def index(request):
         return render(request,"precisionmedicine/index.html",{
             "patient_form" : patient_form,
             "patients" : patiants,
+            "diseases" : diseases,
             "add_disease" : add_disese,
         })
     else:
@@ -49,6 +52,9 @@ def delete_patient(request,id):
     patient = Patient.objects.get(pk=id).delete()
     return redirect("index")
 
+def delete_disease(request,id):
+    disease = Disaese.objects.get(pk=id).delete()
+    return redirect("index")
 
 @csrf_protect
 def login_view(request):
@@ -114,23 +120,23 @@ def profile(request,id):
             'id' : id
         })
 
-'''
+
 def search(request):
     if request.method == "GET":
         search = request.GET['q']
         
         try:
-            categories = Categories.objects.get(name__icontains=search)
-            images = categories.images.all().order_by('-id')
+            # diseases = Disaese.objects.get(name__icontains=search)
+            # patient = diseases.patient.all().order_by('-id')
+            patients = Patient.objects.filter(name__icontains=search)
         except ObjectDoesNotExist:
-            return render(request,"stock_app/index.html",{
+            return render(request,"precisionmedicine/index.html",{
             "message" : "No Result Found!",
-            "categories" : Categories.objects.all(),
+            # "diseases" : Disaese.objects.all(),
         })
            
-        return render(request,"stock_app/index.html",{
+        return render(request,"precisionmedicine/index.html",{
             "search" : search,
-            "images" : images,
-            "categories" : Categories.objects.all(),
+            "patients" : patients,
+            # "diseases" : Disaese.objects.all(),
         })
-'''
