@@ -82,7 +82,7 @@ body {
 }
 @media (min-width: 225px) {
   .logoutbtn {
-    margin: 2% 0% 2% 55%;
+    margin: 2% 0% 2% 65%;
   }
 }
 .logo {
@@ -98,4 +98,90 @@ body {
   .logo img {
     width: 5%;
   }
+}
+.bg-model {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.model-content {
+  width: 500px;
+  height: 522px;
+  background-color: white;
+  opacity: 1;
+  border-radius: 50px;
+  position: relative;
+}
+.model-content h1 {
+  text-align: center;
+  margin-top: 18px;
+  color: red;
+}
+
+.patient-form {
+  margin: 1rem 1rem 1rem 1rem;
+}
+.patient-form label {
+  color: rgba(179, 6, 6, 0.755);
+}
+
+.close {
+  position: absolute;
+  right: 6%;
+  top: 2%;
+  transform: rotate(45deg);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.bg-model-5 {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.model-content-5 {
+  width: 500px;
+  height: 522px;
+  background-color: white;
+  opacity: 1;
+  border-radius: 50px;
+  position: relative;
+}
+.model-content-5 h1 {
+  text-align: center;
+  margin-top: 18px;
+  color: red;
+}
+
+.close-5 {
+  position: absolute;
+  right: 6%;
+  top: 2%;
+  transform: rotate(45deg);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.patients-table {
+  display: block;
+}
+
+.diseases-table {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

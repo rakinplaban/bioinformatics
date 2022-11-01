@@ -1,9 +1,100 @@
 {% extends 'precisionmedicine/layout.html' %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block body %} 
 
+<div class="bg-model">
+    <div class="model-content">
+        <a href="{% url 'index' %}" style="color:black;">
+            <div class="close">+</div>
+        </a>
+        <h1>Add Patient</h1>
+        {% if user.is_authenticated %}
+            <div class="patient-form">
+                <form action="" method="POST" enctype="multipart/form-data" class="form-group">
+                    {% csrf_token %}
+                    {{patient_form}}
+                    <div style="margin-bottom: 2px;"></div>
+                    <input type="Submit" class="btn sbtn">
+                </form>
+            </div>
+        {% else %}
+            <div class="sorry">Sorry! You have to <a href="{% url 'login' %}">login</a>. 😔</div>
+        {% endif %}
+        
+    </div>
     
+</div>
+<div class="bg-model-5">
+    <div class="model-content-5">
+        <a href="{% url 'index' %}" style="color:black;">
+            <div class="close-5">+</div>
+        </a>
+        <h1>Add Disease</h1>
+        {% if user.is_authenticated %}
+            <div class="patient-form">
+                <form action="" method="POST" enctype="multipart/form-data" class="form-group">
+                    {% csrf_token %}
+                    {{add_disease}}
+                    <div style="margin-bottom: 2px;"></div>
+                    <input type="Submit" class="btn sbtn">
+                </form>
+            </div>
+        {% else %}
+            <div class="sorry">Sorry! You have to <a href="{% url 'login' %}">login</a>. 😔</div>
+        {% endif %}
+        
+    </div>
+    
+</div>
+    <div class="patients-table">
+        <table class="table text-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Protine Sequence</th>
+                <th scope="col">Doctor</th>
+                <th scope="col">Delete</th>
+            </tr>
+            {% for patient in patients %} 
 
+            <tr>
+                <th scope="row">{{patient.id}}</th>
+                <td>{{patient.name}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.gender}}</td>
+                <td>{{patient.protine}}</td>
+                <td>{{patient.doctor}}</td>
+                <td><a href="{% url 'delete_patient' patient.id %}" class="text-light"><i class="fa fa-trash-o"></i></a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
+    <div class="diseases-table">
+        <table class="table text-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name of Disease</th>
+                <th scope="col">Root Portine</th>
+                <th scope="col">Patient</th>
+                <th scope="col">Delete</th>
+            </tr>
+            {% for disease in diseases %} 
+
+            <tr>
+                <th scope="row">{{disease.id}}</th>
+                <td>{{disease.name}}</td>
+                <td>{{disease.root_protine}}</td>
+                <td>{{disease.patient}}</td>
+                <td><a href="{% url 'delete_disease' disease.id %}" class="text-light"><i class="fa fa-trash-o"></i></a></td>
+            </tr>
+
+            {% endfor %}
+        </table>
+    </div>
 {% endblock %}
+
