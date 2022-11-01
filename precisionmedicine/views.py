@@ -114,12 +114,6 @@ def register(request):
         return render(request, "precisionmedicine/register.html")
 
 
-def profile(request,id):
-    id = request.user.id
-    return render(request,"precisionmedicine/profile.html",{
-            'id' : id
-        })
-
 
 def search(request):
     if request.method == "GET":
