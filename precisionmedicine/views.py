@@ -126,16 +126,17 @@ def search(request):
         search = request.GET['q']
         
         try:
-            diseases = Disaese.objects.get(name__icontains=search)
-            patient = diseases.patient.all().order_by('-id')
+            # diseases = Disaese.objects.get(name__icontains=search)
+            # patient = diseases.patient.all().order_by('-id')
+            patients = Patient.objects.filter(name__icontains=search)
         except ObjectDoesNotExist:
             return render(request,"precisionmedicine/index.html",{
             "message" : "No Result Found!",
-            "diseases" : Disaese.objects.all(),
+            # "diseases" : Disaese.objects.all(),
         })
            
         return render(request,"precisionmedicine/index.html",{
             "search" : search,
-            "patient" : patient,
-            "diseases" : Disaese.objects.all(),
+            "patients" : patients,
+            # "diseases" : Disaese.objects.all(),
         })

@@ -150,15 +150,34 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
     <script>
-        $( function() {
-            var availableTags = [
-                {% for disease in diseases %}
-                    "{{disease.name}}",
-                {% endfor %}
-            ];
-            $( "#searchbar" ).autocomplete({
-              source: availableTags
-            });
+      $( function() {
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+        $( "#searchbar" ).autocomplete({
+          source: availableTags
         });
-    </script>
+      } );
+      </script>
 {% endblock %}
