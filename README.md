@@ -12,4 +12,14 @@
 `action.js` has the **javascript** controling the front-end and `style.scss` contains the styling.
 
 # To run my application, the following commands should be run
+1. Create a virtual environment <br>
 `python3 -m venv venv`
+2. Activate the environment<br>
+`venv\Scripts\activate`
+3. Install packages on the environment with<br>
+`pip install -r requirements.txt`
+4. Migrate using followings: <br>
+`python manage.py makemigrations bioinformatics`<br>
+`python manage.py migrate`
+5. Finally run the server using<br>
+`python manage.py runserver`
